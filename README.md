@@ -1,5 +1,7 @@
 # myremomo
 
+*(Short for **My Remote Models**)*
+
 A responsive, web-based interface for interacting with your local Ollama models. It features real-time streaming, markdown support, a responsive dark-mode design, and a favorites system.
 
 ## Prerequisites
