@@ -25,17 +25,22 @@ pip install -r requirements.txt
 ```
 
 ### 2. Start the Server
-Start the FastAPI backend server. We configure the server to bind to `0.0.0.0` so that it listens on all network interfaces. This allows you to access the web UI from other devices (like your phone or tablet) connected to the same network or over your VPN.
+We configure the server to bind to `0.0.0.0` so that it listens on all network interfaces. This allows you to access the web UI from other devices (like your phone or tablet) connected to the same network or over your VPN.
 
-Run the following command:
+**Option A: Run in the foreground (Port 8000)**
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
-*(Alternatively, you can simply run `python app.py`, which has also been configured to bind to `0.0.0.0`)*
+*(Alternatively, you can simply run `python app.py`)*
+
+**Option B: Run in the background (Port 9999)**
+For convenience, you can use the included utility scripts to safely run the application as a background daemon.
+- **Start:** `./start.sh` (Logs are saved to `app.log`)
+- **Stop:** `./stop.sh`
 
 ### 3. Access the Application
-- **From this computer**: Open your browser and go to `http://localhost:8000`
-- **From another device**: To connect easily and securely from your phone or tablet when away from home, we highly recommend using [Tailscale](https://tailscale.com/). Once Tailscale is installed on both devices, simply find your computer's Tailscale IP address (e.g., `100.x.y.z`) and open `http://<YOUR_TAILSCALE_IP>:8000` in your device's browser. Alternatively, you can use your local network IP (e.g., `192.168.1.50`) if on the same Wi-Fi.
+- **From this computer**: Open your browser and go to `http://localhost:8000` (or `9999` if using `start.sh`).
+- **From another device**: To connect easily and securely from your phone or tablet when away from home, we highly recommend using [Tailscale](https://tailscale.com/). Once Tailscale is installed on both devices, simply find your computer's Tailscale IP address (e.g., `100.x.y.z`) and open `http://<YOUR_TAILSCALE_IP>:8000` (or `:9999`) in your device's browser. Alternatively, you can use your local network IP (e.g., `192.168.1.50`) if on the same Wi-Fi.
 
 ## Features
 - **Dynamic Model Selection**: Automatically lists models available on your local Ollama instance.
