@@ -35,7 +35,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 
 ### 3. Access the Application
 - **From this computer**: Open your browser and go to `http://localhost:8000`
-- **From another device (via VPN / Local Network)**: Find your computer's IP address (e.g., `192.168.1.50` or your VPN IP) and open `http://<YOUR_IP_ADDRESS>:8000` in your device's browser.
+- **From another device**: To connect easily and securely from your phone or tablet when away from home, we highly recommend using [Tailscale](https://tailscale.com/). Once Tailscale is installed on both devices, simply find your computer's Tailscale IP address (e.g., `100.x.y.z`) and open `http://<YOUR_TAILSCALE_IP>:8000` in your device's browser. Alternatively, you can use your local network IP (e.g., `192.168.1.50`) if on the same Wi-Fi.
 
 ## Features
 - **Dynamic Model Selection**: Automatically lists models available on your local Ollama instance.
