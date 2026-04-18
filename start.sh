@@ -24,10 +24,11 @@ else
     exit 1
 fi
 
-echo "Starting Ollama Web UI in daemon mode..."
+PORT=${1:-9999}
+echo "Starting myremomo in daemon mode on port $PORT..."
 
 # Run the app using uvicorn in the background with nohup
-nohup uvicorn app:app --host 0.0.0.0 --port 9999 > app.log 2>&1 &
+nohup uvicorn app:app --host 0.0.0.0 --port $PORT > app.log 2>&1 &
 PID=$!
 
 # Save the Process ID
